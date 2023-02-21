@@ -80,7 +80,7 @@
 			  </ul>
 			  <span class="navbar-text">
 				<li class="nav">
-				  <a class="nav-link" href="<?=base_url('logout')?>">Logout</a>
+				  <a class="nav-link" href="<?=base_url('logout')?>">Logout!</a>
 				</li>
 			  </span>
 			</div>
