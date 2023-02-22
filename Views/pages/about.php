@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
 <?php
-echo "About Page!";
+echo "<h2>About Page Comming Soon../h2>";
 ?>
-
-</body>
-</html>

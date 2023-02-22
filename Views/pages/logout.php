@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
 <?php
-echo "This is the Logout Page!";
+echo "<h2>Sucessfuly Logged Out</h2>";
 ?>
-
-</body>
-</html>

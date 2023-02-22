@@ -10,6 +10,8 @@
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	
+	<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+	
 	<style>
 				* {
 		  box-sizing: border-box;
@@ -21,10 +23,18 @@
 
 		/* Float four columns side by side */
 		.column {
-		  float: left;
-		  width: 33%;
+		  float: center;
+		  width: 100%;
 		  padding: 0 10px;
 		}
+		
+		p {
+			
+			
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: clip;
+}
 
 		/* Remove extra left and right margins, due to padding in columns */
 		.row {margin: 0 -5px;}
@@ -35,6 +45,14 @@
 		  display: table;
 		  clear: both;
 		}
+		
+		.cards {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-auto-rows: auto;
+			grid-gap: 1rem;
+
+}
 
 		/* Style the counter cards */
 		.card {
@@ -42,6 +60,8 @@
 		  padding: 16px;
 		  text-align: center;
 		  background-color: #f1f1f1;
+		  margin-bottom: 15px;
+		  margin-top: 30px;
 		  
 		}
 
@@ -52,110 +72,6 @@
 			display: block;
 			margin-bottom: 20px;
 		  }
-		  
-		article.job-card {
-		  display: grid;
-		  grid-template-columns: 80px auto 100px;
-		  grid-template-rows: 35px 10px 35px;
-		  width: 700px;
-		  position: relative;
-		  border-top: 1px solid #e3e3e3;
-		  border-bottom: 1px solid #e3e3e3;
-		  font-family: 'Helvetica';
-		  padding: 24px;
-		}
-
-		article.job-card:hover,
-		article.job-card:focus {
-		  background-color: rgba(0,166,194,.03);
-			border-color: #b2e4ec;
-		}
-
-		.company-logo-img {
-		  grid-area: 1 / 1 / 2 / 2;
-		  background-color: #fff;
-		  border: 1px solid #e3e3e3;
-		  height: 80px;
-		  width: 80px;
-		  box-sizing: border-box;
-		  position: relative;
-		  padding: 5px;
-		}
-
-		.company-logo-img img {
-		  max-height: calc(100% - 10px);
-		  max-width: calc(100% - 10px);
-		  position: absolute;
-		  top: 50%;
-		  left: 50%;
-		  transform: translate(-50%, -50%);
-		}
-
-		.job-title {
-		  grid-area: 1 / 2 / 2 / 3;
-		  font-size: 16px;
-		  align-self: start;
-		  font-weight: 500;
-		  margin-top: 5px;
-		  padding: 0 24px;
-		}
-
-		.company-name {
-		  grid-area: 2 / 2 / 3 / 3;
-		  align-self: center;
-		  font-size: 14px;
-		  color: #777;
-		  margin-bottom: 5px;
-		  padding: 0 24px;
-		}
-
-		.skills-container {
-		  grid-area: 3 / 2 / 4 / 3;
-		  align-self: center;
-		  padding-top: 10px;
-		  padding: 0 24px;
-		}
-
-		.skill {
-		  display: inline;
-		  color: #00a6c2;
-		  border-radius: 2px;
-		  background-color: rgba(0,166,194,.05);
-		  border: 1px solid rgba(0,166,194,.15);
-		  padding: 5px 8px;
-		  font-size: 12px;
-		}
-
-		button {
-		  display: block;
-		  width: 100%;
-		  cursor: pointer;
-		  border: 0;
-		  border-radius: 4px;
-		  font-size: 14px;
-		  padding: 6px 12px;
-		  z-index: 2;
-		}
-		.apply {
-		  grid-area: 1 / 3 / 2 / 4;
-		  background-color: #1ab059;
-		  color: #fff;
-		}
-		.save {
-		  grid-area: 3 / 3 / 4 / 4;
-		  background-color: #fff;
-		  border: 1px solid #a4a5a8;
-		  color: #777;
-		}
-
-		a {
-		  position: absolute;
-		  width: 100%;
-		  height: 100%;
-		  left: 0;
-		  top: 0;
-		  z-index: 1;
-		}
 		  
 	</style>
 		
@@ -181,6 +97,10 @@
 				</li>
 				<li class="nav-item">
 				  <a class="nav-link" href="<?=base_url('jobs')?>">Jobs</a>
+				</li>
+				</li>
+				<li class="nav-item">
+				  <a class="nav-link" href="<?=base_url('about')?>">About</a>
 				</li>
 			  </ul>
 			  <span class="navbar-text">
