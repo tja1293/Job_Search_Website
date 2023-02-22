@@ -7,7 +7,7 @@
 // Set connection details
 $login = 'deb7974b-5a07-410d-a047-8998af8482df';
 $password = '';
-$url = 'https://www.reed.co.uk/api/1.0/search?keywords=laravel&location=wolverhampton&distancefromlocation=15';
+$url = 'https://www.reed.co.uk/api/1.0/search?keywords=cleaning&location=wolverhampton&distancefromlocation=1';
 
 // Create CURL object with options
 $ch = curl_init();
@@ -23,7 +23,7 @@ curl_close($ch);
 
 // Display results
 foreach($jobs->results as $job) {
-	print($job->jobTitle . "<br>");
+	print($job->minimumSalary . "<br>");
 }
 
 ?>
