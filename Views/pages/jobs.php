@@ -23,7 +23,16 @@ curl_close($ch);
 
 ?>
 
-
+	<nav class="navbar bg-body-tertiary">
+		  <div class="container-fluid">
+			<a class="navbar-brand"></a>
+			<form class="d-flex" role="search">
+			  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+			  <button class="btn btn-outline-success" type="submit">Search</button>
+			</form>
+		  </div>
+	</nav>
+	
 	<div class="container text-center">
 	  <div class="row">
 	  
@@ -38,7 +47,7 @@ curl_close($ch);
 					<div class="card-body">
 						<h5 class="card-title"><u> <?php print($job->jobTitle . "<br>")?></u></h5>
 						<p class="card-text"> <?php print($job->employerName . "<br>")?></p>
-						<a href="#" class="btn btn-primary">View Job</a>
+						<a href="#" class="btn btn-primary">View Job </a>
 						<a href="#" class="btn btn-primary">Apply</a>
 					</div>
 				</div>

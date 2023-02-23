@@ -81,9 +81,9 @@
 	
 		<!-- Navbar - (Home, Login, Jobs, Logout) -->
 		
-	    <nav class="navbar navbar-expand-lg bg-light">
+	    <nav class="navbar navbar-expand-lg bg-light fixed-top navbar-dark bg-dark">
 		  <div class="container-fluid">
-			<a class="navbar-brand" href="#">TechJobs</a>
+			<a class="navbar-brand" href="#">Tech Jobs</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 			  <span class="navbar-toggler-icon"></span>
 			</button>
@@ -103,11 +103,12 @@
 				  <a class="nav-link" href="<?=base_url('about')?>">About</a>
 				</li>
 			  </ul>
-			  <span class="navbar-text">
+			  
+			  <!--<span class="navbar-text">
 				<li class="nav">
 				  <a class="nav-link" href="<?=base_url('logout')?>">Logout!</a>
 				</li>
-			  </span>
+			  </span> -->
 			</div>
 		  </div>
 		</nav>
