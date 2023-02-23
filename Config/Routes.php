@@ -34,18 +34,17 @@ $routes->get('/', 'Home::index');
 
 use App\Controllers\News;
 use App\Controllers\Pages;
+use App\Controllers\Users;
 
 $routes->get('news/(:segment)', [News::class, 'view']);
 $routes->get('news', [News::class, 'index']);
 
-
-
+$routes->get('users', [Users::class, 'index']);
+$routes->get('(:segment)', [Users::class, 'view']);
 
 $routes->get('pages', [Pages::class, 'index']);
 $routes->get('(:segment)', [Pages::class, 'view']);
 
-//$routes->get('pages/login', [Pages::class, 'login']);
-//$routes->get('pages/about', [Pages::class, 'about']);
 
 
 /*

@@ -2,6 +2,9 @@
 <html>
 <body>
 
+<div class="p-3 mb-2 bg-transparent text-dark"></div>
+<div class="p-3 mb-2 bg-transparent text-dark"></div>
+
 <?php
 
 // Set connection details

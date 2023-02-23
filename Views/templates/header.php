@@ -34,7 +34,7 @@
 			white-space: nowrap;
 			overflow: hidden;
 			text-overflow: clip;
-}
+		}
 
 		/* Remove extra left and right margins, due to padding in columns */
 		.row {margin: 0 -5px;}
@@ -52,7 +52,7 @@
 			grid-auto-rows: auto;
 			grid-gap: 1rem;
 
-}
+		}
 
 		/* Style the counter cards */
 		.card {
@@ -74,6 +74,7 @@
 		  }
 		  
 	</style>
+	
 		
   </head>
   <body>
