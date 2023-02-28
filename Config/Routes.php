@@ -40,8 +40,8 @@ use App\Controllers\Jobs;
 //$routes->get('news', [News::class, 'index']);			// not using
 
 
-$routes->get('jobs/(:segment)', [Jobs::class, 'view']);
-$routes->get('jobs', [Jobs::class, 'index']);
+$routes->get('jobs/(:segment)', [Jobs::class, 'onejob']);
+$routes->get('jobs', [Jobs::class, 'alljobs']);
 
 $routes->get('pages', [Pages::class, 'index']);
 $routes->get('(:segment)', [Pages::class, 'view']);
