@@ -32,18 +32,24 @@ $routes->set404Override();
 
 $routes->get('/', 'Home::index');
 
-use App\Controllers\News;
+//use App\Controllers\News; 								// not using
 use App\Controllers\Pages;
-use App\Controllers\Users;
+use App\Controllers\Jobs;
 
-$routes->get('news/(:segment)', [News::class, 'view']);
-$routes->get('news', [News::class, 'index']);
+//$routes->get('news/(:segment)', [News::class, 'view']); // not using
+//$routes->get('news', [News::class, 'index']);			// not using
 
-$routes->get('users', [Users::class, 'index']);
-$routes->get('(:segment)', [Users::class, 'view']);
+
+$routes->get('jobs/(:segment)', [Jobs::class, 'view']);
+$routes->get('jobs', [Jobs::class, 'index']);
 
 $routes->get('pages', [Pages::class, 'index']);
 $routes->get('(:segment)', [Pages::class, 'view']);
+
+
+
+
+
 
 
 
