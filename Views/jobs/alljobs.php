@@ -3,6 +3,14 @@
 <?php
 
 $img = array(
+    "indeed.png",
+    "github.png",
+    "glassdoor.png",
+	"reed.png",
+	"totaljobs.png",
+	"monster.png");
+
+$imge = array(
     "https://pbs.twimg.com/profile_images/1542534261588336640/RkjKw5p3_400x400.jpg",
     "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/wafobb7hb5abdcgff3iv.jpg",
 	"https://www.smartrecruiters.com/blog/wp-content/uploads/2013/05/monnster.com_.jpg",
@@ -15,14 +23,29 @@ $img = array(
 	
 	?>
 
-<div class="container">
-	
-	
-	
 	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	
+	<div class="container">
+	
+		<nav class="navbar navbar-light bg-light">
+		 <form class="form-inline" method="post" action="<?=base_url('jobs')?>">
+			<?= csrf_field() ?>
+			<div class="input-group">
+			  <div class="input-group-prepend">
+				<button class="btn btn-outline-secondary" type="submit" value="Search Job Item" >Search</button>
+			  </div>
+			  <input type="text" name="keyword" value="<?= set_value('keyword')?>" class="form-control" placeholder="Keyword" aria-label="Username" aria-describedby="basic-addon1">
+			  <input type="text" name="location" value="<?= set_value('location')?>" class="form-control" placeholder="Location" aria-label="Username" aria-describedby="basic-addon1">
+			</div>
+		  </form>
+		</nav>
+	
 
+	<!--<p>&nbsp;</p>-->
+	
 
-	  <div class="row">
+	  <div class="row bg-light">
 	  
 	<?php
 		// Display results
@@ -38,22 +61,24 @@ $img = array(
 			$jobID = ($job->jobId);
 			?>
 	  
-			<div class="col-md-6 col-lg-4 mb-4">
-			  <div class="card h-100">
-				<img src="<?php echo $randomImage ?>" class="card-img-top" alt="Company Logo 3">
-				<div class="card-body">
-				  <h5 class="card-title"><?php print($job->jobTitle . "<br>")?></h5>
-				  <h6 class="card-subtitle mb-2 text-muted"><?php print($job->employerName . "<br>")?></h6>
-				  <p class="card-text"><?php print($job->locationName . "<br>")?></p>
-				  <p class="card-text text-muted">Added: <?php print($job->date . "<br>")?></p>
-				</div>
-				<div class="card-footer">
-				  <!--<button type="button" action="page.php" <a href="page.php?id=$userID">View Card</a>class="btn btn-primary btn-sm">Apply Now</button>-->
-				  <a href="<?=base_url('jobs')?>/<?php echo $jobID ?>" class="btn btn-primary">View Job</a>
-				  <a href="#" class="btn btn-primary">Apply</a>
-				</div>
-			  </div>
+			<p>&nbsp;</p>
+			<div class="col-md-6">
+			  <img src="<?=base_url('images')?>/<?php echo $randomImage ?>" class="img-thumbnail  text-center " alt="Job Title Image">
 			</div>
+			<div class="col-md-6">
+			  <h2 class="mb-3 text-center"><?php print($job->jobTitle . "<br>")?></h2>
+			  <p class="lead mb-4 text-center"><?php print($job->locationName . "<br>")?></p>
+			  <h5 class="mb-3">Job Requirements</h5>
+			  <ul class="list-unstyled mb-4">
+				<li>Added: <?php print($job->date . "<br>")?></li>
+			  </ul>
+			  <a href="#" class="btn btn-primary btn-lg">Apply Now</a>
+			  <a href="<?=base_url('jobs')?>/<?php echo $jobID ?>" class="btn btn-primary btn-lg">View Job</a>
+			  <!--<a href="#" class="btn btn-primary btn-lg"><i class="bi bi-bookmark-star"></i></a>-->
+	
+			</div>
+			<p>&nbsp;</p>
+			<hr class="mt-3 mb-3"/>
 			
 		<?php
 		}
@@ -61,3 +86,5 @@ $img = array(
 				
 	  </div>
 	</div>
+	 
+</div>

@@ -40,6 +40,8 @@ use App\Controllers\Jobs;
 //$routes->get('news', [News::class, 'index']);			// not using
 
 
+$routes->match(['post'], 'jobs', [Jobs::class, 'alljobs']);
+
 $routes->get('jobs/(:segment)', [Jobs::class, 'onejob']);
 $routes->get('jobs', [Jobs::class, 'alljobs']);
 

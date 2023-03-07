@@ -9,13 +9,25 @@ class Jobs extends BaseController
 {
     public function alljobs()
     {
-		//$job = model(JobsModel::class);
 		
-        // Set connection details
+		helper('form');
+		
+		// Initiating default job keyword to nothing (all jobs)  
+		
+		$post = $this->request->getPost(['keyword', 'location']);
+
+		
+		
+		// Set connection details
 		$login = 'deb7974b-5a07-410d-a047-8998af8482df';
 		$password = '';
-		$url = 'https://www.reed.co.uk/api/1.0/search?keywords=Web&location=wolverhampton&distancefromlocation=1';
-
+		
+		// Adding a variable into the search jobs API from a User input search box.
+		//$url = 'https://www.reed.co.uk/api/1.0/search?keywords=' . $post['keyword'] . " " . $post['location'];
+		$url = 'https://www.reed.co.uk/api/1.0/search?distancefromlocation=1&keywords=' . $post['keyword'] . '&locationName=' . $post['location'];
+		print $url;
+		
+		
 		// Create CURL object with options
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL,$url);
@@ -44,6 +56,7 @@ class Jobs extends BaseController
 		$password = '';
 		//$url = 'https://www.reed.co.uk/api/1.0/jobs/49434707';
 		$url = 'https://www.reed.co.uk/api/1.0/jobs/' . $jobID;
+
 
 		// Create CURL object with options
 		$ch = curl_init();
