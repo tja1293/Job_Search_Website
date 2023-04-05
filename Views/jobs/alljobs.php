@@ -70,7 +70,7 @@ $imge = array(
 			  <p class="lead mb-4 text-center"><?php print($job->locationName . "<br>")?></p>
 			  <h5 class="mb-3">Job Requirements</h5>
 			  <ul class="list-unstyled mb-4">
-				<li>Added: <?php print($job->date . "<br>")?></li>
+				<li><?php print($job->jobDescription . "<br>")?></li>
 			  </ul>
 			  <a href="#" class="btn btn-primary btn-lg">Apply Now</a>
 			  <a href="<?=base_url('jobs')?>/<?php echo $jobID ?>" class="btn btn-primary btn-lg">View Job</a>
@@ -85,6 +85,7 @@ $imge = array(
 		?>
 				
 	  </div>
+	  <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 	</div>
 	 
 </div>

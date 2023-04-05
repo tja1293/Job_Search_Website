@@ -1,92 +1,37 @@
+
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>TechJobs</title>
 	
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 	
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	
-	
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 	
-	<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src = "js/testFunction.js"></script>
+	<!--<script> ajaxRequest(); </script>
 	
-	    
-  
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
 	
 	<style>
 		
-		<!--
-
-		* {
-		  box-sizing: border-box;
-		}
-
-		body {
-		  font-family: Arial, Helvetica, sans-serif;
-		}
-
-		/* Float four columns side by side */
-		.column {
-		  float: center;
-		  width: 100%;
-		  padding: 0 10px;
-		}
-		
-		p {
-			
-			
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: clip;
-		}
-
-		/* Remove extra left and right margins, due to padding in columns */
-		.row {margin: 0 -5px;}
-
-		/* Clear floats after the columns */
-		.row:after {
-		  content: "";
-		  display: table;
-		  clear: both;
-		}
-		
-		.cards {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			grid-auto-rows: auto;
-			grid-gap: 1rem;
-
-		}
-
-		/* Style the counter cards */
-		.card {
-		  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-		  padding: 16px;
-		  text-align: center;
-		  background-color: #f1f1f1;
-		  margin-bottom: 15px;
-		  margin-top: 30px;
-		  
-		}
-
-		/* Responsive columns - one column layout (vertical) on small screens */
-		@media screen and (max-width: 600px) {
-		  .column {
-			width: 100%;
-			display: block;
-			margin-bottom: 20px;
-		  }
-		  
-		  
-		  
-		  
-		  /*** Job Listing ***/
+		/*** Job Listing ***/
 		.nav-pills .nav-item .active {
 			border-bottom: 2px solid var(--primary);
 		}
@@ -102,21 +47,14 @@
 			border-color: rgba(0, 0, 0, .08);
 			box-shadow: none;
 		}
-		
-		/* Rounded border */
-		hr.rounded {
-		  border-top: 8px solid #000000;
-		  border-radius: 5px;
-		}
-		-->
 				  
 	</style>
+
 	
 		
   </head>
   <body>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-	
+   
 	<div class="container">
 	
 		<!-- Navbar - (Home, Login, Jobs, Logout) -->
@@ -140,15 +78,9 @@
 				</li>
 				</li>
 				<li class="nav-item">
-				  <a class="nav-link" href="<?=base_url('about')?>">About</a>
+				  <a class="nav-link" href="<?=base_url('test')?>">Near Me</a>
 				</li>
 			  </ul>
-			  
-			  <!--<span class="navbar-text">
-				<li class="nav">
-				  <a class="nav-link" href="<?=base_url('logout')?>">Logout!</a>
-				</li>
-			  </span> -->
 			</div>
 		  </div>
 		</nav>
