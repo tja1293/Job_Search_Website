@@ -37,7 +37,7 @@ $imgs = array(
 	
 	
 
-	<div class="container bg-white "  >
+	<div class="container bg-white"  >
 		<!-- Content for first nested container goes here -->
 		<img src="<?=base_url('images/company-images/banner-main.png')?>" height="100px" class="img-fluid" alt="...">
 	  </div>
@@ -75,31 +75,7 @@ $imgs = array(
 					<div class="container" style="height: 900px; overflow-y: scroll;">
 					  <!-- Your content here -->
 					
-											
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-											
+													
 						 <?php if (! empty($news) && is_array($news)): ?>
 
 							<?php foreach ($news as $news_item): 

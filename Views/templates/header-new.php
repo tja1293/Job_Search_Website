@@ -101,7 +101,7 @@
 		<!-- Navbar -->
 		<nav class="navbar navbar-expand-lg bg-body-white ">
 		  <div class="container-fluid">
-			<a class="navbar-brand" href="<?=base_url('homepage')?>">
+			<a class="navbar-brand" href="<?=base_url('home')?>">
 				<img src="<?=base_url('images/large-images/logo.png')?>" alt="" width="200" height="50">
 			</a>
 			<button
@@ -119,7 +119,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item">
-				  <a class="nav-link active" aria-current="page" href="<?=base_url('homepage')?>">Home</a>
+				  <a class="nav-link active" aria-current="page" href="<?=base_url('home')?>">Home</a>
 				</li>
 				<li class="nav-item">
 				  <a class="nav-link" href="<?=base_url('jobs')?>">Jobs</a>
