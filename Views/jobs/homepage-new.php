@@ -31,7 +31,82 @@
 				</div>
 			
 				
+				<script>
+					
+					var city = "";
+				// Step 1: Get user coordinates
+				function getCoordintes() {
+					var options = {
+						enableHighAccuracy: true,
+						timeout: 5000,
+						maximumAge: 0
+					};
+
+					function success(pos) {
+						var crd = pos.coords;
+						var lat = crd.latitude.toString();
+						var lng = crd.longitude.toString();
+						// manchester lat lng test
+						//var lat = "53.483959";
+						//var lng = "-2.244644";
+						var coordinates = [lat, lng];
+						//console.log(`Latitude: ${lat}, Longitude: ${lng}`);
+						getCity(coordinates);
+						return;
+
+					}
+
+					function error(err) {
+						console.warn(`ERROR(${err.code}): ${err.message}`);
+					}
+
+					navigator.geolocation.getCurrentPosition(success, error, options);
+				}
+
+				// Step 2: Get city name
+				function getCity(coordinates) {
+					var xhr = new XMLHttpRequest();
+					var lat = coordinates[0];
+					var lng = coordinates[1];
+
+					// Paste your LocationIQ token below.
+					xhr.open('GET', "https://us1.locationiq.com/v1/reverse.php?key=pk.8697431b21d342e11e03b347c8f877b0&lat=" +
+					lat + "&lon=" + lng + "&format=json", true);
+					xhr.send();
+					xhr.onreadystatechange = processRequest;
+					xhr.addEventListener("readystatechange", processRequest, false);
+
+					function processRequest(e) {
+						if (xhr.readyState == 4 && xhr.status == 200) {
+							var response = JSON.parse(xhr.responseText);
+							city = response.address.city;
+							$("#jobsLink").attr("href", "<?=base_url('jobs/location')?>/"+city);
+							//console.log(city);
+							
+							/*$.ajax({
+								url: "https://mi-linux.wlv.ac.uk/~2015861/project-root/public/jobs/location/" + city, //current URL
+								//url: "/",
+								type: "POST",
+								data: {
+									name: city
+								},
+								dataType: 'json',
+								success: function(response){
+									$('.result').html(response);
+								}
+							});
+							*/
+						
+						
+							//ajaxRequest(city);
+							return;
+						}
+					}
+				}
+
+				getCoordintes();
 				
+				</script>
 				
 				<div class="container border border-5 border-dark rounded bg-dark text-light">
 				  <div class="row">
