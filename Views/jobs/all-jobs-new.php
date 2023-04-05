@@ -236,6 +236,8 @@
 							
 						?>
 					  
+					  
+					 
 							<div class="row">
 								<div class="col-sm-12 offset-sm-0">
 									<div class="job-card border-white rounded ">
