@@ -47,25 +47,6 @@ $imgs = array(
 		<br />
 		  <div class="container" >
 			<!-- Content for first nested container goes here -->
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 				
 			<div class="container bg-white px-4">
 				<!-- Content for second nested container goes here -->
@@ -94,7 +75,31 @@ $imgs = array(
 					<div class="container" style="height: 900px; overflow-y: scroll;">
 					  <!-- Your content here -->
 					
-												 
+											
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+											
 						 <?php if (! empty($news) && is_array($news)): ?>
 
 							<?php foreach ($news as $news_item): 
