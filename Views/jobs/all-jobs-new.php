@@ -85,6 +85,8 @@
 				<div class="container mt-4">
 				  <div class="row">
 					<div class="col-12">
+					  
+					  
 					  <div class="container mt-4">
 						  <form class="form-inline" method="post" action="<?=base_url('jobs')?>">
 							<?= csrf_field() ?>
