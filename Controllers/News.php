@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\NewsModel;
 
 class News extends BaseController
-{
+{	
     public function index()
     {
         $model = model(NewsModel::class);
@@ -28,7 +28,7 @@ class News extends BaseController
 
         if (empty($data['news'])) {
             throw new PageNotFoundException('Cannot find the news item: ' . $slug);
-        }
+        }`
 
         $data['title'] = $data['news']['title'];
 
@@ -49,11 +49,12 @@ class News extends BaseController
                 . view('templates/footer');
         }
 
-        $post = $this->request->getPost(['title', 'body']);
+        $post = $this->request->getPost(['title', 'slug', 'body']);
 
         // Checks whether the submitted data passed the validation rules.
         if (! $this->validateData($post, [
             'title' => 'required|max_length[255]|min_length[3]',
+			'slug' => 'required|max_length[255]|min_length[3]',
             'body'  => 'required|max_length[5000]|min_length[10]',
         ])) {
             // The validation fails, so returns the form.
@@ -66,7 +67,7 @@ class News extends BaseController
 
         $model->save([
             'title' => $post['title'],
-            'slug'  => url_title($post['title'], '-', true),
+            'slug'  => $post['slug'],
             'body'  => $post['body'],
         ]);
 
@@ -74,4 +75,6 @@ class News extends BaseController
             . view('news/success')
             . view('templates/footer');
     }
+	
+	
 }

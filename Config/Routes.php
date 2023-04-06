@@ -96,6 +96,9 @@ $routes->get('reviews', [News::class, 'index']);
 $routes->get('pages', [Pages::class, 'index']);
 $routes->get('(:segment)', [Pages::class, 'view']);
 
+
+$routes->get('register', [Reviews::class, 'register']);
+
 //------------------------------------------------------------------------------------------------------
 
 

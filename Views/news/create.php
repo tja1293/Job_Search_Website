@@ -2,17 +2,18 @@
 
 <?= session()->getFlashdata('error') ?>
 <?= validation_list_errors() ?>
-<br />
-<br />
-<br />
-<br />
+
 <form action="/news/create" method="post">
     <?= csrf_field() ?>
 
-    <label for="title">title</label>
+    <label for="title">Name</label>
     <input type="input" name="title" value="<?= set_value('title') ?>">
     <br>
 	
+	<label for="title">Title</label>
+    <input type="input" name="slug" value="<?= set_value('slug') ?>">
+    <br>
+
 
     <label for="body">Text</label>
     <textarea name="body" cols="45" rows="4"><?= set_value('body') ?></textarea>

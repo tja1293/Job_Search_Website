@@ -1,22 +1,10 @@
 <?php
-
-namespace App\Models;
-
-use CodeIgniter\Model;
-
-class ReviewsModel extends Model
+class ReviewsModel extends Model 
 {
-    protected $table = 'reviews';
-	
-	
-	
-	 public function getReviews($title = false)
-    {
-        if ($title === false) {
-            return $this->findAll();
-        }
-
-        return $this->where(['title' => $title])->first();
-    }
-	
+	function saverecords($name,$title,$body)
+	{
+		$query="INSERT INTO `reviews`( `name`, `title`, `body`) 
+		VALUES ('$name','$title','$body')";
+		$this->db->query($query);
+	}
 }

@@ -1,4 +1,4 @@
-<script src="<?=base_url('js/newTestFunction.js')?>"></script>
+<!--<script src="<?//=base_url('js/newTestFunction.js')?>"></script>-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <br />
@@ -176,7 +176,7 @@
 						 </a>
 					  </div>
 					</div>
-				  </div>a
+				  </div>
 				</div>
 			  </div>
 			</div>
