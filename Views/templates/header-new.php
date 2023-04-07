@@ -124,8 +124,15 @@
 				<li class="nav-item">
 				  <a class="nav-link" href="<?=base_url('jobs')?>">Jobs</a>
 				</li>
-				<li class="nav-item">
-				  <a class="nav-link" href="<?=base_url('reviews')?>">Reviews</a>
+				<li class="nav-item dropdown">
+				  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					Reviews
+				  </a>
+				  <ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="<?=base_url('reviews')?>">View Reviews</a></li>
+					<li><hr class="dropdown-divider"></li>
+					<li><a class="dropdown-item" href="<?=base_url('news/create')?>">Add Review</a></li>
+				  </ul>
 				</li>
 
 			  </ul>
