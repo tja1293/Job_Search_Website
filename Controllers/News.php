@@ -5,7 +5,8 @@ namespace App\Controllers;
 use App\Models\NewsModel;
 
 class News extends BaseController
-{	
+{
+	
     public function index()
     {
         $model = model(NewsModel::class);
@@ -19,7 +20,7 @@ class News extends BaseController
             . view('news/index')
             . view('templates/footer');
     }
-
+	/*
     public function view($slug = null)
     {
         $model = model(NewsModel::class);
@@ -35,7 +36,8 @@ class News extends BaseController
         return view('templates/header-new', $data)
             . view('news/view')
             . view('templates/footer');
-    }
+    }*/
+	
 	
 	public function create()
     {
@@ -49,7 +51,7 @@ class News extends BaseController
                 . view('templates/footer');
         }
 
-        $post = $this->request->getPost(['title', 'slug', 'body']);
+        $post = $this->request->getPost(['title','slug', 'body']);
 
         // Checks whether the submitted data passed the validation rules.
         if (! $this->validateData($post, [
@@ -67,7 +69,8 @@ class News extends BaseController
 
         $model->save([
             'title' => $post['title'],
-            'slug'  => $post['slug'],
+            //'slug'  => url_title($post['title'], '-', true),
+			'slug' => $post['slug'],
             'body'  => $post['body'],
         ]);
 
@@ -75,6 +78,5 @@ class News extends BaseController
             . view('news/success')
             . view('templates/footer');
     }
-	
 	
 }

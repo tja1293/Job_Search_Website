@@ -1,64 +1,36 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+namespace App\Controllers;
 
-class User extends CI_Controller {
+use App\Models\UserModel;
+
+class User extends BaseController {
 
 	public function __construct() {
-		parent::__construct();
-		$this->load->helper(array('form', 'url'));
-		$this->load->library(['form_validation','session']);
-		$this->load->database();
+
+		$db = db_connect();
+		$this->userModel = new UserModel($db);
 	}
 
-	public function login() {
+	public function add() {
+		echo view('news/add');
+	}
 
-		$this->form_validation->set_rules('email', 'Email', 'required');
-		$this->form_validation->set_rules('password', 'Password', 'required');
+	public function save() {
+		$first_name	= $this->request->getPost('txtLastName');
+		$last_name	= $this->request->getPost('txtLastName');
+		$email		= $this->request->getPost('txtEmail');
+	
+		$data = [
+			'first_name'		=> $first_name,
+			'last_name'		=> $last_name,
+			'email'			=> $email,
+		];
 
-		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('login_view');
+		$result = $this->userModel->add($data);
+		if($result) {
+			echo "New user is registered successfully.";
 		} else {
-
-			$email = $this->input->post('email');
-			$password = $this->input->post('password');
-
-			$user = $this->db->get_where('users',['email' => $email])->row();
-			
-			if(!$user) {
-				$this->session->set_flashdata('login_error', 'Please check your email or password and try again.', 300);
-				redirect(uri_string());
-			}
-
-	
-			if(!password_verify($password,$user->password)) {
-				$this->session->set_flashdata('login_error', 'Please check your email or password and try again.', 300);
-				redirect(uri_string());
-			}
-
-			 $data = array(
-					'user_id' => $user->user_id,
-					'first_name' => $user->first_name,
-					'last_name' => $user->last_name,
-					'email' => $user->email,
-					);
-
-				
-			$this->session->set_userdata($data);
-
-			//redirect('/'); // redirect to home
-			echo 'Login success!'; exit;
-			
-		}		
+			echo "Something went wrong";
+		}
 	}
-
-	public function logout(){
-        $this->session->sess_destroy();
-        redirect('user/login');
-    }
-	
-	public function login2(){
-        return view('templates/header-new')
-            . view('users/login_form')
-            . view('templates/footer');
-    }
 }

@@ -62,6 +62,7 @@ class Filters extends BaseConfig
         'post' => ['csrf'],
     ];
 
+
     /**
      * List of filter aliases that should run on any
      * before or after URI patterns.

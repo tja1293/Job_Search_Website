@@ -35,7 +35,8 @@ $routes->get('/', 'Home::index');
 use App\Controllers\News; 								
 use App\Controllers\Pages;
 use App\Controllers\Jobs;
-use App\Controllers\Reviews;
+use App\Controllers\User;
+
 
 
 //------------------------------------------------------------------------------------------------------
@@ -96,14 +97,10 @@ $routes->get('reviews', [News::class, 'index']);
 $routes->get('pages', [Pages::class, 'index']);
 $routes->get('(:segment)', [Pages::class, 'view']);
 
-
-$routes->get('register', [Reviews::class, 'register']);
-
 //------------------------------------------------------------------------------------------------------
 
 
-
-
+$routes->get('reviews', [News::class, 'index']);
 
 /*
  * --------------------------------------------------------------------

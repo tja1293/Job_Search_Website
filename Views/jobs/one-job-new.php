@@ -101,9 +101,9 @@ $imgs = array(
 
 						<?php else: ?>
 
-							<h3>No News</h3>
+							<h3>No Reviews</h3>
 
-							<p>Unable to find any news for you.</p>
+							<p>Unable to find any Reviews for you.</p>
 
 						<?php endif ?>
 
